@@ -1,0 +1,27 @@
+import about from './about.png'
+import aboutcard from './aboutcard.png'
+import avatarIcon from './avatar-icon.png'
+import Blur  from './Blur.png'
+import doctor1 from './doctor-img01.png'
+import doctor2 from './doctor-img02.png'
+import doctor3 from './doctor-img03.png'
+import faqImg from './faq-img.png'
+import featureImg from './feature-img.png'
+import headerBg from './header-bg.png'
+import heroBg from './hero-bg.png'
+import heroImg1 from './hero-img01.png'
+import heroImg2 from './hero-img02.png'
+import heroImg3 from './hero-img03.png'
+import icon1 from './icon01.png'
+import icon2 from './icon02.png'
+import icon3 from './icon03.png'
+import logo from './logo.png'
+import mask from './mask.png'
+import patient from './patient-avatar.png'
+import signup from './signup.gif'
+import star from './star.png'
+import videoImg from './video-icon.png'
+
+export {
+about, aboutcard, avatarIcon, Blur, doctor1, doctor2, doctor3, faqImg, featureImg, headerBg, heroImg1, heroImg2, heroImg3, icon1, icon2, icon3, heroBg, logo, mask, patient, signup, star, videoImg
+}

@@ -1,14 +1,5 @@
 import React from 'react'
-import heroImg01 from '../assets/images/hero-img01.png'
-import heroImg02 from '../assets/images/hero-img02.png'
-import heroImg03 from '../assets/images/hero-img03.png'
-import icon01 from '../assets/images/icon01.png'
-import icon02 from '../assets/images/icon02.png'
-import icon03 from '../assets/images/icon03.png'
-import featureImg from '../assets/images/feature-img.png'
-import videoIcon from '../assets/images/video-icon.png'
-import faqImg from '../assets/images/faq-img.png'
-import avatarIcon from '../assets/images/avatar-icon.png'
+import { heroImg1, heroImg2, heroImg3, icon1, icon2, icon3, featureImg, videoImg, faqImg, avatarIcon } from '../assets/images'
 import { BsArrowRight } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 import About from '../components/about/About'
@@ -66,11 +57,11 @@ const Home = () => {
              {/*============== hero content =================*/}
             <div className='flex gap-[30px] justify-end'>
               <div>
-                <img className='w-full' src={heroImg01} alt='doctor-1'/>
+                <img className='w-full' src={heroImg1} alt='doctor-1'/>
               </div>
               <div className='mt-[30px]'>
-                <img src={heroImg02} alt='hero image2' className='w-full mb-[30px]'/>
-                <img src={heroImg03} alt='hero-img1' className='w-full'/>
+                <img src={heroImg2} alt='hero image2' className='w-full mb-[30px]'/>
+                <img src={heroImg3} alt='hero-img1' className='w-full'/>
               </div>
             </div>
           </div>
@@ -90,7 +81,7 @@ const Home = () => {
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-[30px] mt-[30px] lg:mt-[55px] '>
             <div className='py-[30px] px-5'>
               <div className='flex items-center justify-center'>
-                <img src={icon01} alt='first icon'/>
+                <img src={icon1} alt='first icon'/>
               </div>
 
               <div className='mt-[30px]'>
@@ -107,7 +98,7 @@ const Home = () => {
 
             <div className='py-[30px] px-5'>
               <div className='flex items-center justify-center'>
-                  <img src={icon02} alt='second icon'/>
+                  <img src={icon2} alt='second icon'/>
                 </div>
 
                 <div className='mt-[30px]'>
@@ -124,7 +115,7 @@ const Home = () => {
 
             <div className='py-[30px] px-5'>
               <div className='flex items-center justify-center'>
-                  <img src={icon03} alt='third icon'/>
+                  <img src={icon3} alt='third icon'/>
                 </div>
 
                 <div className='mt-[30px]'>
@@ -193,7 +184,7 @@ const Home = () => {
                       <p className='text-[10px] leading-[10px] lg:lext-[14px] lg:leading-5 text-headingBg font-[400]'>12:53PM</p>
                     </div>
                     <span className='w-5 h-5 lg:w-[34px] lg:h-[34px] flex items-center justify-center bg-yellow rounded py-1 px-[6px] lg:py-3 lg:px-[9px]'>
-                      <img src={videoIcon} alt='video icon'/>
+                      <img src={videoImg} alt='video icon'/>
                     </span>
                   </div>
 

@@ -1,6 +1,5 @@
-import React, {useState, useRef, useEffect} from 'react'
-import logo from '../../assets/images/logo.png'
-import userImg from '../../assets/images/avatar-icon.png'
+import React, {useRef} from 'react'
+import {logo, avatarIcon} from '../../assets/images'
 import {NavLink, Link} from 'react-router-dom'
 import {BiMenu} from 'react-icons/bi'
 
@@ -56,7 +55,7 @@ const Header = () => {
               <div className='hidden'>
                 <Link to='/'>
                   <figure className='w-[35px] h-[35px] rounded-full object-cover cursor-pointer'>
-                    <img src={userImg} className='w-full rounded-full' alt='user image'/>
+                    <img src={avatarIcon} className='w-full rounded-full' alt='user image'/>
                   </figure>
                 </Link>
               </div>
