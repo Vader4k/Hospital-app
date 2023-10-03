@@ -15,6 +15,7 @@ import About from '../components/about/About'
 import ServiceList from '../components/services/ServiceList'
 import DoctorsList from '../components/doctors/DoctorsList'
 import FaqList from '../components/Faq/FaqList'
+import Testtimonial from '../components/testimonials/Testtimonial'
 
 const Home = () => {
   return (
@@ -243,6 +244,7 @@ const Home = () => {
                 <h2 className='heading text-center'>What our patient say</h2>
                 <p className='text_para text-center'>World-class care for everyone. Our health system offers unmatched expert health care. </p>
             </div>
+            <Testtimonial/>
            </div>
         </section>
     </>
