@@ -19,7 +19,7 @@ import logo from './logo.png'
 import mask from './mask.png'
 import patient from './patient-avatar.png'
 import signup from './signup.gif'
-import star from './star.png'
+import star from './Star.png'
 import videoImg from './video-icon.png'
 
 export {
