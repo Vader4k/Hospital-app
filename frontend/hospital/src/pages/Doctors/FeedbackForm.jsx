@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { AiFillStar } from 'react-icons/ai'
 
 const FeedbackForm = () => {
+
+    const [rating, setRating] = useState(0)
+    const [hover, setHover] = useState(0)
+
   return (
     <form action=''>
         <div>
@@ -11,6 +16,17 @@ const FeedbackForm = () => {
             <div>
                 {[...Array(5).keys()].map((_,index)=>{
                     index+=1
+                    return( 
+                    <button key={index} 
+                    type='button' 
+                    name='button' 
+                    onClick={()=>setRating(index)}
+                    className=''>
+                    <span>
+                        <AiFillStar/>
+                    </span>
+                    </button>
+                    );
                 })}
             </div>
         </div>
