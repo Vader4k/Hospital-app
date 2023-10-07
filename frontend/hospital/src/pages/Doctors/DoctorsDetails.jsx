@@ -49,13 +49,8 @@ const DoctorsDetails = () => {
             </div>
 
             <div className='mt-[50px]'>
-              {
-                tab === "about" && <DoctorsAbout/>
-              }
-
-              {
-                tab === "feedback" && <Feedback/>
-              }
+              {tab === "about" && <DoctorsAbout/>}
+              {tab === "feedback" && <Feedback/>}
             </div>
           </div>
 
