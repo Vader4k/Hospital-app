@@ -87,7 +87,7 @@ const Home = () => {
               <div className='mt-[30px]'>
                 <h2 className='text-[26px] leading-9 text-headingBg font-[700] text-center'>Find a Doctor
                 </h2>
-                <p className='text-[16px] leading-7 text-textcol font-[400] mt-4 text-center max-w-[400px]'>World-class care for everyone, Our health System offers unmwatched expert health care. From the lab to the clinic 
+                <p className='text-[16px] leading-7 text-textcol font-[400] mt-4 text-center max-w-[400px] m-auto'>World-class care for everyone, Our health System offers unmwatched expert health care. From the lab to the clinic 
                 </p>
 
                 <Link to='/doctors' className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primary hover:border-none hover:text-white'>
@@ -104,7 +104,7 @@ const Home = () => {
                 <div className='mt-[30px]'>
                   <h2 className='text-[26px] leading-9 text-headingBg font-[700] text-center'>Find a Location
                   </h2>
-                  <p className='text-[16px] leading-7 text-textcol font-[400] mt-4 text-center max-w-[400px]'>World-class care for everyone, Our health System offers unmwatched expert health care. From the lab to the clinic 
+                  <p className='text-[16px] leading-7 text-textcol font-[400] mt-4 text-center max-w-[400px] m-auto'>World-class care for everyone, Our health System offers unmwatched expert health care. From the lab to the clinic 
                   </p>
 
                   <Link to='/doctors' className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primary hover:border-none hover:text-white'>
@@ -121,7 +121,7 @@ const Home = () => {
                 <div className='mt-[30px]'>
                   <h2 className='text-[26px] leading-9 text-headingBg font-[700] text-center'>Book Appointment
                   </h2>
-                  <p className='text-[16px] leading-7 text-textcol font-[400] mt-4 text-center max-w-[400px]'>World-class care for everyone, Our health System offers unmwatched expert health care. From the lab to the clinic 
+                  <p className='text-[16px] leading-7 text-textcol font-[400] mt-4 text-center max-w-[400px] m-auto'>World-class care for everyone, Our health System offers unmwatched expert health care. From the lab to the clinic 
                   </p>
 
                   <Link to='/doctors' className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primary hover:border-none hover:text-white'>
@@ -133,7 +133,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/*============== About section =====================*/}
+      {/*============== medical section =====================*/}
         <section>
           <About/>
         </section>
