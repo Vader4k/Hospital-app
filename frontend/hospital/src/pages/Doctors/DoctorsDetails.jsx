@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { doctor2, star} from '../../assets/images'
 import DoctorsAbout from './DoctorsAbout'
 import Feedback from './Feedback'
+import SidePanel from './SidePanel'
 
 const DoctorsDetails = () => {
   const [tab, setTab] = useState("about")
@@ -54,7 +55,9 @@ const DoctorsDetails = () => {
             </div>
           </div>
 
-          <div></div>
+          <div>
+            <SidePanel/>
+          </div>
         </div>
       </div>
     </section>
