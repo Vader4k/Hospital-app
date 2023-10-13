@@ -1,0 +1,1 @@
+import {updateUser} from '../controllers/userController.js'

@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken'
 import bcrypt from 'bcryptjs'
 
 const generateToken = user=>{
-    return jwt.sign({id:user._id, role:user.role}, process.env.JWT_SECRET_key,{
+    return jwt.sign({id:user._id, role:user.role}, process.env.JWT_SECRET_kEY,{
         expiresIn: '15days'
     })
 }
@@ -63,26 +63,32 @@ export const register = async (req, res) =>{
 
 
 export const login = async(req, res) =>{
-    const {email, password} = req.body
+    const {email,password } = req.body
     try{
         let user = null
 
         const patient = await User.findOne({email})
         const doctor = await Doctor.findOne({email})
-
          if (patient){
             user = patient
-         } else {
+         } 
+         if (doctor){
             user = doctor
          }
-         //chec if user exists
+         //check if user exists
          if (!user){
             return res.status(404).json("user not found")
          }
          //compare the password
-         const checkPassword = await bcrypt.compare(password, user.password)
+         const checkPassword = await bcrypt.compare( 
+            req.body.password,
+            user.password
+        );
+
         if (!checkPassword) {
-            return res.status(400).json("password incorrect")
+            return res
+            .status(400)
+            .json("password incorrect")
         }
 
         //if password is correct, generate a token
