@@ -3,6 +3,12 @@ import Doctor from '../Models/DoctorSchema.js'
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcryptjs'
 
+const generateToken = user=>{
+    return jwt.sign({id:user._id, role:user.role}, process.env.JWT_SECRET_key,{
+        expiresIn: '15days'
+    })
+}
+
 export const register = async (req, res) =>{
 
     const {email, password, name, role, photo, gender} = req.body
@@ -56,7 +62,6 @@ export const register = async (req, res) =>{
 
 
 
-
 export const login = async(req, res) =>{
     const {email, password} = req.body
     try{
@@ -75,8 +80,22 @@ export const login = async(req, res) =>{
             return res.status(404).json("user not found")
          }
          //compare the password
+         const checkPassword = await bcrypt.compare(password, user.password)
+        if (!checkPassword) {
+            return res.status(400).json("password incorrect")
+        }
+
+        //if password is correct, generate a token
+        const token = generateToken(user)
+
+        const {password, role, appointments, ...rest} = user._doc
+
+        res
+        .status(200)
+        .json({status: 'true', message:"successful login", token, data:{...rest}, role})
 
     }catch(err){
-        
+        res.status(500).json({status: 'false', message:"failed to login"})
     }
 }
+
