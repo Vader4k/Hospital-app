@@ -1,4 +1,3 @@
-import React from 'react'
 import { heroImg1, heroImg2, heroImg3, icon1, icon2, icon3, featureImg, videoImg, faqImg, avatarIcon } from '../assets/images'
 import { BsArrowRight } from 'react-icons/bs'
 import { Link } from 'react-router-dom'

@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import  {useRef} from 'react'
 import {logo, avatarIcon} from '../../assets/images'
 import {NavLink, Link} from 'react-router-dom'
 import {BiMenu} from 'react-icons/bi'

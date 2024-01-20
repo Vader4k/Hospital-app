@@ -1,7 +1,6 @@
 import {doctors} from '../../assets/data/doctors'
 import DoctorsCard from '../../components/doctors/DoctorsCard'
 import Testtimonial from '../../components/testimonials/Testtimonial'
-import DoctorDetails from './DoctorsDetails'
 
 const Doctors = () => {
   return (
