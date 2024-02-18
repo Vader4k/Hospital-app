@@ -6,10 +6,13 @@ import Doctors from '../pages/Doctors/Doctors'
 import Contact from '../pages/Contact'
 import DoctorsDetails from '../pages/Doctors/DoctorsDetails'
 
-import { Routes, Route} from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
+import ScrollToTop from '../components/ScrollToTop'
 
 const Routers = () => {
   return (
+    <>
+      <ScrollToTop/>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/home' element={<Home/>}/>
@@ -19,7 +22,8 @@ const Routers = () => {
         <Route path='/register' element={<Signup/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/services' element={<Services/>}/>
-      </Routes>    
+      </Routes>  
+    </>  
   )
 }
 
