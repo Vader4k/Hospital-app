@@ -5,7 +5,7 @@ import bcrypt from 'bcryptjs'
 
 const generateToken = user=>{
     return jwt.sign({id:user._id, role:user.role}, process.env.JWT_SECRET_kEY,{
-        expiresIn: '15days'
+        expiresIn: '30days'
     })
 }
 
@@ -52,18 +52,18 @@ export const register = async (req, res) =>{
         }
 
         await user.save()
-        res.status(200).json("successfully created user")
+        res.status(200).json({success:true, message: 'User saved successfully'})
 
     }catch(err){
         console.error(err); // Log the error to the console for debugging.
-        res.status(500).json("Internal Server Error: " + err.message);
+        res.status(500).json({success:false, message:"Internal Server Error"});
     }
 }
 
 
 
 export const login = async(req, res) =>{
-    const {email,password } = req.body
+    const {email} = req.body
     try{
         let user = null
 

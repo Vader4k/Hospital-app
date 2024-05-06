@@ -23,7 +23,7 @@ const Signup = () => {
 
   const handleFileInputChange = async(e) =>{
     const file = e.target.files[0];
-
+    setSelectedFile(file)
     console.log(file)
   }
 
@@ -108,7 +108,7 @@ const Signup = () => {
                         <option>Select</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
-                        <option value="disturbed">Mentally Disturbed</option>
+                        <option value="disturbed">Other</option>
                     </select>
                   </label>
               </div>

@@ -6,6 +6,8 @@ import dotenv from "dotenv";
 import authRoute from './routes/auth.js'
 import userRoute from './routes/user.js'
 import doctorRoute from './routes/doctor.js'
+
+
 dotenv.config()
 
 const app = express();
