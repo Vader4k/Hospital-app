@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 
-const currentDate = new Date();
+const currentDate = () => {
+    return new Date()
+};
 
 const UserSchema = new mongoose.Schema({
     email: {type: String, required: true, unique: true},
@@ -13,7 +15,7 @@ const UserSchema = new mongoose.Schema({
         enum: ["patient", "admin"],
         default: "patient",
     },
-    created_at : currentDate(),
+    created_at: { type: Date, default: currentDate },
     gender:{type:String, enum: ["male", "female", "other"],},
     bloodType : {type:String},
     appointment: [{type: mongoose.Types.ObjectId, ref: "Appointment"}]

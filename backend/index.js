@@ -43,7 +43,7 @@ app.use(express.json());
 app.use(cookieParser())
 app.use(cors(corsOptions))
 app.use('/backend/v1/auth', authRoute)
-app.use('/backend/v1/user', userRoute)
+app.use('/backend/v1/users', userRoute)
 app.use('/backend/v1/doctor', doctorRoute)
 
 
