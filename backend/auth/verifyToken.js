@@ -3,30 +3,25 @@ import Doctor from '../Models/DoctorSchema.js'
 import User from '../Models/UserSchema.js'
 
 export const authenticate = async (req, res, next) => {
-    // get token from headers
-    const authToken = req.headers.authorization
+   const authToken = req.headers.authorization
 
-    //check if token exist or not
-    if (!authToken || !authToken.startsWith('Bearer')) {
-        return res.status(401).json({success: false, message:"No token, authorization denied"})
-    } 
+   if(!authToken || !authToken.startsWith('Bearer ')){
+    return res.status(401).json({success:false, message:"no token, authorization denied"})
+   }
 
-    try {
-        const token = authToken.split(' ')[1];
+   try {
+    const token = authToken.split(' ')[1];
 
-        //verify token
-        const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY)
-
-        req.userId = decoded.id
-        req.role = decoded.role
-
-
-        next()// must be called 
-    } catch (err) {
-        if(err.name === 'TokenExpiredError'){
-            return res.status(401).json({ message: "token expired"})
-        }
-    }  return res.status(401).json({success:false, message:"invalid token"})
+    const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
+    req.userId = decoded.id;
+    req.role = decoded.role;
+    next();
+   } catch (error) {
+    if (error.name === "TokenExpiredError"){
+        return res.status(401).json({success:false, message:"token expired"})
+    }
+    return res.status(401).json({success:false, message:"invalid token"})
+   }
 }
 
 export const restrict = roles => async(req, res, next) => {
@@ -45,7 +40,7 @@ export const restrict = roles => async(req, res, next) => {
     }
 
     if(!roles.includes(user.role)){
-        return res.status(401).json({success:false, message: "youre not allowed"})
+        return res.status(401).json({success:false, message: "youre not authorized"})
     }
 
     next()

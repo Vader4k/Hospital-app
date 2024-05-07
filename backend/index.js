@@ -7,7 +7,6 @@ import authRoute from './routes/auth.js'
 import userRoute from './routes/user.js'
 import doctorRoute from './routes/doctor.js'
 
-
 dotenv.config()
 
 const app = express();
@@ -38,7 +37,6 @@ const connectedDB = async()=>{
 }
 
 //middleware
-
 app.use(express.json());
 app.use(cookieParser())
 app.use(cors(corsOptions))
