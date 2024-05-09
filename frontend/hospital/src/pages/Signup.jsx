@@ -1,11 +1,14 @@
 import {useState} from 'react'
 import { Link } from 'react-router-dom'
 import {signup, doctor1} from '../assets/images'
+import uploadImageToCloudinary from '../utils/uploadCloudinary'
+import {BASE_URL} from '../config'
 
 const Signup = () => {
 
   const [selectedFile, setSelectedFile] = useState(null)
   const [previewURL, setPreviewURL] = useState("")
+  const [loading, setLoading] = useState(false)
 
   const [formData, setFormData] = useState({
     name : '',
@@ -23,12 +26,27 @@ const Signup = () => {
 
   const handleFileInputChange = async(e) =>{
     const file = e.target.files[0];
-    setSelectedFile(file)
-    console.log(file)
+    const data = await uploadImageToCloudinary(file)
+    setPreviewURL(data.url)
+    setSelectedFile(data.url)
+    setFormData({...formData, photo: data.url})
   }
 
   const submitHandler = async (e) =>{
     e.preventDefault();
+    setLoading(true)
+
+    try {
+      const res = await fetch(`${BASE_URL}/auth/register`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (
