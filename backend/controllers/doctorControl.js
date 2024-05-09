@@ -47,7 +47,7 @@ export const getSingleDoctor = async(req, res) =>{
     try {
         const doctor = await Doctor.findById(
             id
-        ).select("-password");
+        ).populate("reviews").select("-password");
 
         res
         .status(200)
@@ -70,7 +70,7 @@ export const getAllDoctor = async(req, res) =>{
         let doctors;
 
         if(query){
-                doctors = await Doctor.find({isApproved: 'approved', $and: [
+                doctors = await Doctor.find({isApproved: 'approved', $or: [
                 {name :{$regex:query, $options: 'i'}},
                 {specialization :{$regex:query, $options: 'i'}}
             ] 

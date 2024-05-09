@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import authRoute from './routes/auth.js'
 import userRoute from './routes/user.js'
 import doctorRoute from './routes/doctor.js'
+import reviewRoute from './routes/review.js'
 
 dotenv.config()
 
@@ -42,7 +43,8 @@ app.use(cookieParser())
 app.use(cors(corsOptions))
 app.use('/backend/v1/auth', authRoute)
 app.use('/backend/v1/users', userRoute)
-app.use('/backend/v1/doctor', doctorRoute)
+app.use('/backend/v1/doctors', doctorRoute)
+app.use('/backend/v1/reviews', reviewRoute)
 
 
 app.listen(port, ()=>{

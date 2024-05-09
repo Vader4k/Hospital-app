@@ -8,7 +8,7 @@ import {
     restrict 
 } from '../auth/verifyToken.js'
 
-const router = express.Router()
+const router = express.Router({ mergeParams:true })
 
 router
     .route("/")
