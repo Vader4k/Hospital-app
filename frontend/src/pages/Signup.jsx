@@ -1,11 +1,14 @@
 import {useState} from 'react'
-import { Link } from 'react-router-dom'
-import {signup, doctor1} from '../assets/images'
+import { Link, useNavigate } from 'react-router-dom'
+import {signup} from '../assets/images'
 import uploadImageToCloudinary from '../utils/uploadCloudinary'
 import {BASE_URL} from '../config'
+import { toast } from 'react-toastify'
+import HashLoader from 'react-spinners/HashLoader'
 
 const Signup = () => {
 
+  const navigate = useNavigate()
   const [selectedFile, setSelectedFile] = useState(null)
   const [previewURL, setPreviewURL] = useState("")
   const [loading, setLoading] = useState(false)
@@ -37,6 +40,7 @@ const Signup = () => {
     setLoading(true)
 
     try {
+      setLoading(true)
       const res = await fetch(`${BASE_URL}/auth/register`, {
         method: 'POST',
         headers: {
@@ -44,8 +48,19 @@ const Signup = () => {
         },
         body: JSON.stringify(formData)
       })
+
+      const {message} = await res.json()
+      if(!res.ok){
+        throw new Error(message)
+      }
+
+      setLoading(false)
+      toast.success(message) 
+      navigate('/login')
+
     } catch (error) {
-      console.log(error)
+      toast.error(error.message)
+      setLoading(false)
     }
   }
 
@@ -132,9 +147,9 @@ const Signup = () => {
               </div>
 
               <div className='mb-5 flex items-center gap-3'>
-                <figure className='w-[60px] h-[60px] rounded-full border-2 border-solid border-primary flex items-center justify-center overflow-hidden'>
-                  <img className='w-full rounded-full' src={doctor1}/>
-                </figure>
+                { selectedFile && <figure className='w-[60px] h-[60px] rounded-full border-2 border-solid border-primary flex items-center justify-center overflow-hidden'>
+                  <img className='w-full rounded-full' src={previewURL}/>
+                </figure>}
 
                 <div className='relative w-[130px] h-[50px]'>
                   <input
@@ -155,10 +170,15 @@ const Signup = () => {
 
             <div className="mt-7">
                 <button 
-                  type="submit" 
+                  type="submit"
+                  disabled={loading && true} 
                   className="w-full bg-primary text-white text-[18px] leading-[30px] rounded-lg py-3 px-4"
                   onClick={handleInputChange}>
-                    Sign Up
+                    { loading ? (
+                      <HashLoader size={35} color='#ffffff'/>
+                      ) : (
+                        "Sign Up"
+                      )}
                 </button>
             </div>
 
