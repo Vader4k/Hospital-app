@@ -4,6 +4,7 @@ import {BASE_URL} from '../config'
 import {toast} from 'react-toastify'
 import { useNavigate } from "react-router-dom"
 import { useAuthContext } from "../context/AuthContext.jsx"
+import HashLoader from 'react-spinners/HashLoader'
 
 const Login = () => {
 
@@ -93,7 +94,13 @@ const Login = () => {
             <div className="mt-7">
               <button 
               type="submit" 
-              className="w-full bg-primary text-white text-[18px] leading-[30px] rounded-lg py-3 px-4">Login</button>
+              className="w-full bg-primary text-white text-[18px] leading-[30px] rounded-lg py-3 px-4">{
+                loading ? (
+                  <HashLoader size={35} color='#ffffff'/>
+                  ) : (
+                    "Login"
+                  )}
+              </button>
             </div>
 
             <p 
