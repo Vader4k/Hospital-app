@@ -63,8 +63,8 @@ const Header = () => {
                     : "users/profile/me"
                   }`}
                 >
-                  <figure className='w-[35px] h-[35px] rounded-full object-cover cursor-pointer'>
-                    <img src={user?.photo} className='w-full rounded-full' alt='user image'/>
+                  <figure className='w-[35px] h-[35px] border border-black rounded-full cursor-pointer'>
+                    <img src={user?.photo} className='w-full h-full rounded-full object-cover' alt='user image'/>
                   </figure>
                 </Link>
               </div>
@@ -85,4 +85,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header   

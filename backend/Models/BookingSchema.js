@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+
 const bookingSchema = new mongoose.Schema({
     doctor: {
         type: mongoose.Types.ObjectId,
@@ -28,3 +29,5 @@ const bookingSchema = new mongoose.Schema({
 {timestamps: true}
 
 )
+
+export default mongoose.model("Booking", bookingSchema)
