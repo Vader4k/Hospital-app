@@ -1,15 +1,15 @@
-import { useState, useContext } from "react"
+import { useState } from "react"
 import {Link} from 'react-router-dom'
 import {BASE_URL} from '../config'
 import {toast} from 'react-toastify'
 import { useNavigate } from "react-router-dom"
-import { authContext } from "../context/AuthContext"
+import { useAuthContext } from "../context/AuthContext.jsx"
 
 const Login = () => {
 
   const navigate = useNavigate()
   const [loading, setLoading] = useState(false)
-  const { dispatch } = useContext(authContext)
+  const { dispatch } = useAuthContext()
 
   const [formData, setFormData] = useState({
     email : '',
@@ -23,8 +23,6 @@ const Login = () => {
 
   const submitHandler = async (e) =>{
     e.preventDefault();
-    setLoading(true)
-
     try {
       setLoading(true)
       const res = await fetch(`${BASE_URL}/auth/login`, {
@@ -47,7 +45,7 @@ const Login = () => {
           token: result.token,
           role: result.role
         }
-      })
+      });
 
       console.log(result, "login data")
 

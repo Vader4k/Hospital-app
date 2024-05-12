@@ -6,7 +6,7 @@ const initialState = {
     token: null
 }
 
-export const authContext = createContext(initialState)
+const authContext = createContext(initialState)
 
 const authReducer = (state, action) => {
     switch (action.type) {
@@ -35,6 +35,8 @@ const authReducer = (state, action) => {
     }
 }
 
+export const useAuthContext = () => useContext(authContext)
+
 export const AuthContextProvider = ({children}) => {
     const [state, dispatch] = useReducer(authReducer, initialState)
 
@@ -43,7 +45,8 @@ export const AuthContextProvider = ({children}) => {
             value={{
                 user:state.user, 
                 token:state.token,
-                role:state.role
+                role:state.role,
+                dispatch
             }}
         >
         {children}
