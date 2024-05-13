@@ -38,9 +38,9 @@ app.use(express.json());
 app.use(cookieParser())
 app.use(cors(
     {
-        origin: ["https://vaderhospital.vercel.app"],
+        origin: 'https://vaderhospital.vercel.app',
         methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-        credentials: true
+        credentials: true,
     }
 ))
 app.use('/backend/v1/auth', authRoute)
