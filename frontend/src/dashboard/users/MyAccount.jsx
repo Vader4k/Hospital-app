@@ -31,14 +31,14 @@ const MyAccount = () => {
               <div className="flex items-center justify-center">
 
                 <figure className="w-[100px] h-[100px] rounded-full overflow-hidde border-2 border-primary">
-                  <div className="w-full h-full bg-gray-300 rounded-full"/>
+                  <img src={userData?.photo} className='w-full h-full object-cover rounded-full' alt="profile_picture" />
                 </figure>
               </div>
 
               <div className="text-center mt-4">
-                <h3 className="text-[18px] leading-[30px] text-headingBg font-bold">Dannie</h3>
-                <p className="text-textcol text-[15px] leading-6 font-medium">example@gmail.com</p>
-                <p className="text-textcol text-[15px] leading-6 font-medium">Blood Type: <span className="ml-2 text-headingBg text-[22px] leading-8">O-</span>
+                <h3 className="text-[18px] leading-[30px] text-headingBg font-bold">{userData?.name}</h3>
+                <p className="text-textcol text-[15px] leading-6 font-medium">{userData?.email}</p>
+                <p className="text-textcol text-[15px] leading-6 font-medium">Blood Type: <span className="ml-2 text-headingBg text-[22px] leading-8">{userData?.bloodType}</span>
                 </p>
               </div>
 
@@ -66,7 +66,7 @@ const MyAccount = () => {
               </div>
 
               {
-                tab === 'settings' && <Settings />
+                tab === 'settings' && <Settings user={userData}/>
               }
               {
                 tab == 'bookings' && <Booking />
