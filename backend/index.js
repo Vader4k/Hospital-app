@@ -14,7 +14,7 @@ const app = express();
 const port = process.env.PORT || 8000;
 
 const corsOptions = {
-    origin: 'https://vaderhospital.vercel.app',
+    origin: ['https://vaderhospital.vercel.app'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['content-type', 'Authorization'],
     credentials: true
