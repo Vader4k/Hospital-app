@@ -13,12 +13,6 @@ dotenv.config()
 const app = express();
 const port = process.env.PORT || 8000;
 
-const corsOptions = {
-    origin: ["https://vaderhospital.vercel.app"],
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true
-}
-
 app.get('/', (req, res)=>{
     res.send("Api is working")
 })
@@ -42,7 +36,13 @@ const connectedDB = async()=>{
 //middleware
 app.use(express.json());
 app.use(cookieParser())
-app.use(cors(corsOptions))
+app.use(cors(
+    {
+        origin: ["https://vaderhospital.vercel.app"],
+        methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+        credentials: true
+    }
+))
 app.use('/backend/v1/auth', authRoute)
 app.use('/backend/v1/users', userRoute)
 app.use('/backend/v1/doctors', doctorRoute)
