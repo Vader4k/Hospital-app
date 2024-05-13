@@ -38,12 +38,10 @@ app.use(express.json());
 app.use(cookieParser())
 app.use(cors(
     {
-        origin: ['https://vaderhospital.vercel.app', 'http://vaderhospital.vercel.app'],
-        methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
         credentials: true,
     }
 ))
-app.use('/hospital-app-server-delta.vercel.app/auth', authRoute)
+app.use('/backend/v1/auth', authRoute)
 app.use('/backend/v1/users', userRoute)
 app.use('/backend/v1/doctors', doctorRoute)
 app.use('/backend/v1/reviews', reviewRoute)
