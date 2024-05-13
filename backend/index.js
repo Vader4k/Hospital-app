@@ -41,6 +41,7 @@ app.use(cors(
         origin: 'https://vaderhospital.vercel.app',
         methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
         credentials: true,
+        allowedHeaders: ["Content-Type", "Authorization", "Access-Control-Allow-Origin", "Access-Control-Allow-Headers", "Access-Control-Allow-Methods", "Access-Control-Allow-Credentials", "Origin", "X-Requested-With", "Content-Type", "Accept", "X-Access-Token", "X-Key", "Authorization", "x-access-token", "x-key", "Content-Length", ]
     }
 ))
 app.use('/backend/v1/auth', authRoute)
