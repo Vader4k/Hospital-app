@@ -5,7 +5,7 @@ const FaqList = () => {
   return (
     <div className='mt-[38px]'>
         {
-            faqs.map((items, index) => <FaqItem items={items} index={index} key={index}/>)
+            faqs.map((item, index) => <FaqItem items={item} key={item.id}/>)
         }
     </div>
   )
