@@ -160,7 +160,7 @@ const Settings = ({ user }) => {
             <div className="mt-7">
                 <button 
                   type="submit"
-                  disabled={loading && true} 
+                  disabled={loading} 
                   className="w-full bg-primary text-white text-[18px] leading-[30px] rounded-lg py-3 px-4"
                   onClick={handleInputChange}>
                     { loading ? (

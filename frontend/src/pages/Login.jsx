@@ -1,8 +1,7 @@
 import { useState } from "react"
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import {BASE_URL} from '../config'
 import {toast} from 'react-toastify'
-import { useNavigate } from "react-router-dom"
 import { useAuthContext } from "../context/AuthContext.jsx"
 import HashLoader from 'react-spinners/HashLoader'
 
@@ -105,7 +104,7 @@ const Login = () => {
 
             <p 
               className="mt-5 text-textcol">Don{"'"}t have an account? 
-              <Link to='/register' className="text-primary font-medium ml-2">Register</Link> 
+              <Link to='/register' className="ml-2 font-medium text-primary">Register</Link> 
             </p>
           </form>
       </div>

@@ -13,7 +13,7 @@ const Feedback = () => {
 
             <div className='flex justify-between gap-10 mb-[30px]'>
                 <div className='flex gap-3'>
-                    <figure className='w-1- h-10 rounded-full'><img src={avatarIcon} alt='icons of users'/>
+                    <figure className='h-10 rounded-full w-1-'><img src={avatarIcon} alt='icons of users'/>
                     </figure>
 
                     <div>
@@ -29,7 +29,9 @@ const Feedback = () => {
 
                 <div className='flex gap-1'>
                     {/*created an array that returns the item 5 times */}
-                    {[...Array(5).keys()].map((_, index)=> <AiFillStar key={index} color='#0067ff'/>)}
+                    {Array.from({ length: 5 }, (_, index) => (
+                        <AiFillStar key={index} color='#0067ff' />
+                    ))}
                 </div>
             </div>
         </div>

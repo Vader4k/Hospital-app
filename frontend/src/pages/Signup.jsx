@@ -69,7 +69,7 @@ const Signup = () => {
       <div className='max-w-[1170px] mx-auto'>
         <div className='grid grid-cols-1 lg:grid-cols-2'>
           {/*   img box     */}
-          <div className='hidden lg:block bg-primary rounded-l-lg'>
+          <div className='hidden rounded-l-lg lg:block bg-primary'>
             <figure className='rounded-l-lg'>
               <img src={signup}
               alt='signup image'
@@ -78,7 +78,7 @@ const Signup = () => {
           </div>
 
           {/*======= sign up form =======*/}
-          <div className='rounded-l-lg lg:pl-16 py-10'>
+          <div className='py-10 rounded-l-lg lg:pl-16'>
             <h3 className='text-text-headingBg text-[22px] leading-9 font-bold mb-10'>Create an <span className='text-primary'>account</span></h3>
 
             <form onSubmit={submitHandler}>
@@ -118,7 +118,7 @@ const Signup = () => {
                 />
               </div>
 
-              <div className='mb-5 flex items-center justify-between'>
+              <div className='flex items-center justify-between mb-5'>
                 <label 
                   className='text-headingBg font-bold text-[16px] leading-7'>Are you a :
                     <select 
@@ -146,7 +146,7 @@ const Signup = () => {
                   </label>
               </div>
 
-              <div className='mb-5 flex items-center gap-3'>
+              <div className='flex items-center gap-3 mb-5'>
                 { selectedFile && <figure className='w-[60px] h-[60px] rounded-full border-2 border-solid border-primary flex items-center justify-center overflow-hidden'>
                   <img className='w-full rounded-full' src={previewURL}/>
                 </figure>}
@@ -171,7 +171,7 @@ const Signup = () => {
             <div className="mt-7">
                 <button 
                   type="submit"
-                  disabled={loading && true} 
+                  disabled={loading} 
                   className="w-full bg-primary text-white text-[18px] leading-[30px] rounded-lg py-3 px-4"
                   onClick={handleInputChange}>
                     { loading ? (
@@ -184,7 +184,7 @@ const Signup = () => {
 
             <p 
               className="mt-5 text-textcol">Already have an account? 
-              <Link to='/login' className="text-primary font-medium ml-2">Login</Link> 
+              <Link to='/login' className="ml-2 font-medium text-primary">Login</Link> 
             </p>
             </form>
           </div>

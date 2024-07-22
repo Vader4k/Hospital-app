@@ -57,6 +57,7 @@ const FeedbackForm = () => {
             placeholder='Write your message'
             onChange={ e => setReviewText(e.target.value)}>
             </textarea>
+            <p>{reviewText}</p>
         </div>
 
         <button 
