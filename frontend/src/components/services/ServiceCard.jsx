@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { BsArrowRight } from 'react-icons/bs'
+import PropTypes from 'prop-types'
 
 const ServiceCard = ({items, index}) => {
 
@@ -12,7 +13,7 @@ const ServiceCard = ({items, index}) => {
 
         <div className='flex items-center justify-between mt-[30px]'>
             <Link to='/doctors' className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E]  flex items-center justify-center group hover:bg-primary hover:border-none hover:text-white'>
-                < BsArrowRight className='group-hover:text-white w-6 h-5'/>
+                < BsArrowRight className='w-6 h-5 group-hover:text-white'/>
             </Link>
             <span className='w-[44px] h-[44px] flex items-center justify-center text-[18px] leading-7 font-[600]' style={{background:`${bgColor}`, color:`${textColor}`, borderRadius: "6px 0px 0px 6px"}}>
                 {index + 1}
@@ -20,6 +21,15 @@ const ServiceCard = ({items, index}) => {
         </div>
     </div>
   )
+}
+
+ServiceCard.prototype = {
+    items: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        desc: PropTypes.string.isRequired,
+        bgColor: PropTypes.string.isRequired,
+        textColor: PropTypes.string.isRequired
+    })
 }
 
 export default ServiceCard

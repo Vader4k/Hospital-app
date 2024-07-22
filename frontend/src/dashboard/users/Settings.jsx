@@ -119,7 +119,7 @@ const Settings = ({ user }) => {
             />
           </div>
 
-          <div className='mb-5 flex items-center justify-between'>
+          <div className='flex items-center justify-between mb-5'>
             <label 
               className='text-headingBg font-bold text-[16px] leading-7'>Gender :
                 <select 
@@ -135,7 +135,7 @@ const Settings = ({ user }) => {
               </label>
           </div>
 
-          <div className='mb-5 flex items-center gap-3'>
+          <div className='flex items-center gap-3 mb-5'>
             {formData.photo && <figure className='w-[60px] h-[60px] rounded-full border-2 border-solid border-primary flex items-center justify-center overflow-hidden'>
               <img className='w-full rounded-full' src={formData.photo}/>
             </figure>}
@@ -174,5 +174,17 @@ const Settings = ({ user }) => {
     </div>
   )
 }
+
+Settings.propTypes = {
+  user: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    gender: PropTypes.string,
+    bloodType: PropTypes.string,
+    photo: PropTypes.string
+  }).isRequired
+}
+
 
 export default Settings
